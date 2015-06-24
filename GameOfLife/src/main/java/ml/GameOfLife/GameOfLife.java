@@ -9,12 +9,8 @@ public class GameOfLife {
 	private List<Cell> mCells = new ArrayList<Cell>();
 	private BiMap<Coordinates, Cell> cellFinder = HashBiMap.create();
 	GameOfLife(boolean[][] inBoard) {
-//		System.out.println(inBoard.length);
-//		System.out.println(inBoard[0].length);
-		
 		for(int i = 0; i < inBoard.length; i++) {
 			for(int j = 0; j < inBoard[i].length; j++) {
-//				System.out.println("hello");
 				Cell newCell = new Cell(inBoard[i][j]);
 				mCells.add(newCell);
 				cellFinder.put(new Coordinates(i, j), newCell);
