@@ -19,16 +19,17 @@ public class Cell {
 	}
 	public void ifWillbeAlive() {
 		int aliveNeighborsNum = howManyNeighborsAlive();
-		if(aliveNeighborsNum < 2 || aliveNeighborsNum > 3) 
-			mIfWillBeAlive = false;
+		if((mIsAlive && aliveNeighborsNum >= 2 && aliveNeighborsNum <= 3) || (!mIsAlive && aliveNeighborsNum == 3))  {
+			mIfWillBeAlive = true;		
+		}
 		else
-			mIfWillBeAlive = true;
+			mIfWillBeAlive = false;
 	}
 	private int howManyNeighborsAlive() {
 		int howManyNeighborsAlive = 0;
 		for(int i = 0; i < mNeighbors.size(); i++) {
 			if(mNeighbors.get(i).getIsAlive() == true)
-				howManyNeighborsAlive++;				
+				howManyNeighborsAlive += 1;				
 		}
 		return howManyNeighborsAlive;
 	}
