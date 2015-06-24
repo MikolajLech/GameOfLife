@@ -4,9 +4,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.google.common.collect.BiMap;
+import com.google.common.collect.HashBiMap;
+
 public class GameOfLife {
 	private List<Cell> mCells = new ArrayList<Cell>();
-	private Map<Coordinates, Cell> cellFinder = new HashMap<Coordinates, Cell>();
+	private BiMap<Coordinates, Cell> cellFinder = HashBiMap.create();
 	GameOfLife(boolean[][] inBoard) {
 //		System.out.println(inBoard.length);
 //		System.out.println(inBoard[0].length);
@@ -19,11 +22,18 @@ public class GameOfLife {
 				cellFinder.put(new Coordinates(i, j), newCell);
 			}
 		}
+//		for(int i = 0; i < mCells.size(); i++) {
+//			BiMap<Cell, Coordinates> cellToCoordinate = cellFinder.inverse();
+//			if(cellToCoordinate.get(mCells.get(i)) != null) // if neighbor cell exists
+//					mCells.get(i).addAllNeigbours();
+//		}
 	}
 	public Cell getCell(int x, int y) {
 		return cellFinder.get(new Coordinates(x, y));
 	}
 	public void updateGame() {
-		
+		for(int i = 0; i < mCells.size(); i++) {
+			//mCells.
+		}
 	}
 }

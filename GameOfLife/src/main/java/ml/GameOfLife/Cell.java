@@ -13,4 +13,8 @@ public class Cell {
 	public boolean getIsAlive() {
 		return mIsAlive;	
 	}
+//	public void addAllNeigbours() {
+//		if()
+//		mNeighbours.add(e)
+//	}
 }
