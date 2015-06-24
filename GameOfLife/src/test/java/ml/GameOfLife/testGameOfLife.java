@@ -15,15 +15,21 @@ public class testGameOfLife {
 	
 	@Test
 	public void trueFor11() {
-		assertEquals(true, gameOfLife.getCell(1,1));
+		assertEquals(true, gameOfLife.getCell(1,1).getIsAlive());
 	}
 
 	@Test
 	public void falseFor00() {
-		assertEquals(false, gameOfLife.getCell(0,0));
+		assertEquals(false, gameOfLife.getCell(0,0).getIsAlive());
 	}
+	
 	@Test
 	public void falseFor22() {
-		assertEquals(false, gameOfLife.getCell(2,2));
+		assertEquals(false, gameOfLife.getCell(2,2).getIsAlive());
 	}
+	
+//	@Test
+//	public void checkUpdateFalseFor22() {
+//		assertEquals(false, gameOfLife.getCell(1,1).getIsAlive());
+//	}
 }
