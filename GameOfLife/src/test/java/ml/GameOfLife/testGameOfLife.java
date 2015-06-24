@@ -5,7 +5,6 @@ import org.junit.Test;
 
 public class testGameOfLife {
 
-//		return twoDArray;
 	//////////////////////////
 	// initial board
 	// 0 0 0
@@ -15,8 +14,16 @@ public class testGameOfLife {
 	GameOfLife gameOfLife = new GameOfLife(board);
 	
 	@Test
-	public void test() {
-		assertEquals(true, gameOfLife.getCell(2,2));
+	public void trueFor11() {
+		assertEquals(true, gameOfLife.getCell(1,1));
 	}
 
+	@Test
+	public void falseFor00() {
+		assertEquals(false, gameOfLife.getCell(0,0));
+	}
+	@Test
+	public void falseFor22() {
+		assertEquals(false, gameOfLife.getCell(2,2));
+	}
 }
