@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cell {
-	List<Cell> mNeighbours = new ArrayList<Cell>();
+	List<Cell> mNeighbors = new ArrayList<Cell>();
 	private boolean mIsAlive;
 	private boolean mWillBeAlive;
 	Cell(boolean inBool) {
@@ -13,8 +13,8 @@ public class Cell {
 	public boolean getIsAlive() {
 		return mIsAlive;	
 	}
-//	public void addAllNeigbours() {
-//		if()
-//		mNeighbours.add(e)
-//	}
+	public void addNeigbor(Cell neighbor) {
+		if(neighbor != null)
+			mNeighbors.add(neighbor);
+	}
 }
