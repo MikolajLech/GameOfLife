@@ -13,11 +13,11 @@ public class Cell {
 	public boolean getIsAlive() {
 		return mIsAlive;	
 	}
-	public void addNeigbor(Cell neighbor) {
+	public void addNeighbor(Cell neighbor) {
 		if(neighbor != null)
 			mNeighbors.add(neighbor);
 	}
-	public void ifWillbeAlive() {
+	public void evalifWillbeAlive() {
 		int aliveNeighborsNum = howManyNeighborsAlive();
 		if((mIsAlive && aliveNeighborsNum >= 2 && aliveNeighborsNum <= 3) || (!mIsAlive && aliveNeighborsNum == 3))  {
 			mIfWillBeAlive = true;		
@@ -34,7 +34,10 @@ public class Cell {
 		return howManyNeighborsAlive;
 	}
 	public boolean getIfWillBeAlive() {
-		ifWillbeAlive();
+		evalifWillbeAlive();
 		return mIfWillBeAlive;
+	}
+	public void changeIsAliveToIfWillBeAlive() {
+		mIsAlive = mIfWillBeAlive;
 	}
 }

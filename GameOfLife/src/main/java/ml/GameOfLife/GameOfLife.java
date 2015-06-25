@@ -16,26 +16,28 @@ public class GameOfLife {
 				cellFinder.put(new Coordinates(i, j), newCell);
 			}
 		}
+		addNeighbors();
+	}
+	public void addNeighbors() {
 		for(int i = 0; i < mCells.size(); i++) {
 			BiMap<Cell, Coordinates> cellToCoordinate = cellFinder.inverse();
 			int CoordX = cellToCoordinate.get(mCells.get(i)).getX();
 			int CoordY = cellToCoordinate.get(mCells.get(i)).getY();
-			mCells.get(i).addNeigbor(cellFinder.get(new Coordinates(CoordX-1, CoordY-1)));
-			mCells.get(i).addNeigbor(cellFinder.get(new Coordinates(CoordX-1, CoordY)));
-			mCells.get(i).addNeigbor(cellFinder.get(new Coordinates(CoordX-1, CoordY+1)));
-			mCells.get(i).addNeigbor(cellFinder.get(new Coordinates(CoordX, CoordY-1)));
-			mCells.get(i).addNeigbor(cellFinder.get(new Coordinates(CoordX, CoordY+1)));
-			mCells.get(i).addNeigbor(cellFinder.get(new Coordinates(CoordX+1, CoordY-1)));
-			mCells.get(i).addNeigbor(cellFinder.get(new Coordinates(CoordX+1, CoordY)));
-			mCells.get(i).addNeigbor(cellFinder.get(new Coordinates(CoordX+1, CoordY+1)));
+			mCells.get(i).addNeighbor(cellFinder.get(new Coordinates(CoordX-1, CoordY-1)));
+			mCells.get(i).addNeighbor(cellFinder.get(new Coordinates(CoordX-1, CoordY)));
+			mCells.get(i).addNeighbor(cellFinder.get(new Coordinates(CoordX-1, CoordY+1)));
+			mCells.get(i).addNeighbor(cellFinder.get(new Coordinates(CoordX, CoordY-1)));
+			mCells.get(i).addNeighbor(cellFinder.get(new Coordinates(CoordX, CoordY+1)));
+			mCells.get(i).addNeighbor(cellFinder.get(new Coordinates(CoordX+1, CoordY-1)));
+			mCells.get(i).addNeighbor(cellFinder.get(new Coordinates(CoordX+1, CoordY)));
+			mCells.get(i).addNeighbor(cellFinder.get(new Coordinates(CoordX+1, CoordY+1)));
 		}
 	}
 	public Cell getCell(int x, int y) {
 		return cellFinder.get(new Coordinates(x, y));
 	}
 	public void updateGame() {
-		for(int i = 0; i < mCells.size(); i++) {
-			//mCells.
-		}
+		//change
+		
 	}
 }
