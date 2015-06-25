@@ -37,7 +37,11 @@ public class GameOfLife {
 		return cellFinder.get(new Coordinates(x, y));
 	}
 	public void updateGame() {
-		//change
-		
+		for(Cell cell : mCells) {
+			cell.evalIfWillBeAlive();
+		}		
+		for(Cell cell : mCells) {
+			cell.changeIsAliveToIfWillBeAlive();
+		}		
 	}
 }

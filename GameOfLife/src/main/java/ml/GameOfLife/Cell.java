@@ -17,13 +17,16 @@ public class Cell {
 		if(neighbor != null)
 			mNeighbors.add(neighbor);
 	}
-	public void evalifWillbeAlive() {
+	public boolean evalIfWillBeAlive() {
 		int aliveNeighborsNum = howManyNeighborsAlive();
 		if((mIsAlive && aliveNeighborsNum >= 2 && aliveNeighborsNum <= 3) || (!mIsAlive && aliveNeighborsNum == 3))  {
-			mIfWillBeAlive = true;		
+			mIfWillBeAlive = true;	
+			return true;
 		}
-		else
+		else {
 			mIfWillBeAlive = false;
+			return false;
+		}
 	}
 	private int howManyNeighborsAlive() {
 		int howManyNeighborsAlive = 0;
@@ -34,7 +37,6 @@ public class Cell {
 		return howManyNeighborsAlive;
 	}
 	public boolean getIfWillBeAlive() {
-		evalifWillbeAlive();
 		return mIfWillBeAlive;
 	}
 	public void changeIsAliveToIfWillBeAlive() {
